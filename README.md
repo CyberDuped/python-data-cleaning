@@ -1,2 +1,2 @@
 # python-data-cleaning
-Practice Python scripts for cleaning and transforming data
+Python scripts, notebooks, and datasets for data cleaning (Coming Soon)
