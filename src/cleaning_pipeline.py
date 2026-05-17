@@ -96,8 +96,19 @@ df["quantity"] = df["quantity"].clip(lower=0)
 df["unit_price"] = df["unit_price"].clip(lower=0)
 df["discount"] = df["discount"].clip(lower=0)
 
+# Fix negative or invalid numeric values
+df["quantity"] = df["quantity"].clip(lower=0)
+df["unit_price"] = df["unit_price"].clip(lower=0)
+
 # It seems right to create a Revenue Column
 df["revenue"] = df["quantity"] * df["unit_price"] * (1 - df["discount"] /100)
+
+# Recalculate revenue
+df = df[df["quantity"].notna() & df["unit_price"].notna()]
+df["revenue"] = df["quantity"] * df["unit_price"] * (1 - df["discount"])
+
+# Convert order_id to clean string format
+df["order_id"] = df["order_id"].astype("Int64").astype(str)
 
 # Convert the date column
 df["order_date"] = pd.to_datetime(
@@ -184,4 +195,6 @@ for category, products in valid_map.items():
 
 invalid_df = pd.concat(invalid_rows)
 
-df.to_csv("..\data\cleaned\Retail_Sales_Transactions_2024-2025_raw.csv", index=False)
+
+
+df.to_csv(r"..\data\cleaned\Retail_Sales_Transactions_2024-2025_raw.csv", index=False)
