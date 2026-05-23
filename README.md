@@ -36,8 +36,8 @@ The final output is a fully cleaned, validated, analysis‑ready dataset suitabl
 retail-cleaning-project/
 │
 ├── data/
-│   ├── raw_retail_sales.csv
-│   └── cleaned_retail_sales.csv
+│   ├── cleaned_Retail_Sales_Transactions_2024-2025_clean.csv
+│   └── raw_Retail_Sales_Transactions_2024-2025_raw.csv
 │
 ├── src/
 │   └── clean_data.py
