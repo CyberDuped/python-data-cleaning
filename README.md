@@ -58,13 +58,13 @@ retail-cleaning-project/
 ## 🚀 How to Run
 
 ```bash
-python src/cleaning_pipeline.py
+python src/clean_data.py
 ```
 
 This executes the full cleaning pipeline and exports:
 
 ```
-cleaned_retail_sales.csv
+cleaned_Retail_Sales_Transactions_2024-2025_clean.csv
 ```
 
 ---
